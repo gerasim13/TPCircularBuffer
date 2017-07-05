@@ -59,13 +59,33 @@
 extern "C" {
 #endif
     
-typedef struct {
+typedef struct TPCircularBuffer {
     void             *buffer;
     int32_t           length;
     int32_t           tail;
     int32_t           head;
     volatile atomic_int fillCount;
     bool              atomic;
+    
+#ifdef __cplusplus
+    TPCircularBuffer() :
+    buffer(nullptr),
+    length(0),
+    tail(0),
+    head(0),
+    fillCount(0),
+    atomic(false)
+    {}
+    
+    TPCircularBuffer(const struct TPCircularBuffer& buff) :
+    buffer(buff.buffer),
+    length(buff.length),
+    tail(buff.length),
+    head(buff.head),
+    fillCount(buff.fillCount),
+    atomic(buff.atomic)
+    {}
+#endif
 } TPCircularBuffer;
 
 /*!
