@@ -6,15 +6,16 @@ END
 
 Pod::Spec.new do |s|
   s.name               = "TPCircularBuffer"
-  s.version            = '1.4'
+  s.version            = '1.6.1'
   s.summary            = 'A simple, fast circular buffer implementation.'
   s.homepage           = 'https://github.com/michaeltyson/TPCircularBuffer'
   s.authors            = { 'Michael Tyson' => 'michael@atastypixel.com' }
   s.license            = { :type => 'MIT', :text => license }
-  s.source             = { :git => 'https://github.com/michaeltyson/TPCircularBuffer.git', :tag => '1.4' }
+  s.source             = { :git => 'https://github.com/michaeltyson/TPCircularBuffer.git', :tag => '1.6.1' }
   s.source_files       = '*.{c,h}'
   s.requires_arc       = false
   s.frameworks         = 'AudioToolbox'
   s.ios.deployment_target = '4.3'
   s.osx.deployment_target = '10.8'
+  s.tvos.deployment_target = '9.0'
 end
